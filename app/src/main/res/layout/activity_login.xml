@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="#00796B"
+    tools:context="com.absjbd.pciu_notice_board.Activity.LoginActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <include
+                layout="@layout/toolbar_main2"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"/>
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="7dp"
+                app:srcCompat="@drawable/pciu_logo"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/imageView5" />
+
+            <!--<com.beardedhen.androidbootstrap.BootstrapLabel
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="36sp"
+                android:layout_marginTop="5dp"
+                app:bootstrapBrand="regular"
+                app:bootstrapHeading="h6"
+                android:textStyle="bold"
+                android:text="Department"
+                android:gravity="center_horizontal"/>
+
+            <com.beardedhen.androidbootstrap.BootstrapDropDown
+                android:id="@+id/departmentDDL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                app:bootstrapBrand="secondary"
+                app:bootstrapExpandDirection="down"
+                app:bootstrapSize="md"
+                android:textStyle="bold"
+                app:bootstrapText="Select your department"
+                app:dropdownResource="@array/bootstrap_dropdown_example_data"
+                app:roundedCorners="true"
+                />-->
+
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bootstrapBrand="success"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                app:bootstrapHeading="h6"
+                android:textStyle="bold"
+                android:text="Student ID"
+                android:gravity="center_horizontal"/>
+
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                app:bootstrapBrand="success"
+                app:roundedCorners="true"
+                android:id="@+id/studentIdET"
+                android:ellipsize="start"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:textColor="#000000"
+                android:hint="i.e: cse004"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:labelFor="@+id/ETReportphoneemail"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="Password"/>
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                app:bootstrapBrand="success"
+                app:roundedCorners="true"
+                android:id="@+id/passwordET"
+                android:textColor="#000000"
+                android:inputType="textPassword"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                app:bootstrapBrand="danger"
+                app:roundedCorners="true"
+                android:id="@+id/loginBtn"
+                android:textStyle="bold"
+                app:showOutline="false"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:onClick="LoginBtnClick"
+                android:layout_width="match_parent"
+                android:textAllCaps="true"
+                android:layout_marginTop="20dp"
+                android:layout_height="45dp"
+                android:text="Login"/>
+
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                app:bootstrapBrand="primary"
+                app:roundedCorners="true"
+                android:id="@+id/registerBtn"
+                android:textStyle="bold"
+                android:onClick="RegisterBtnClick"
+                app:showOutline="false"
+                android:layout_width="match_parent"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:textAllCaps="true"
+                android:layout_marginTop="20dp"
+                android:layout_height="45dp"
+                android:text="Register"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                android:onClick="ForgotPasswordClick"
+                android:textSize="15sp"
+                android:textColor="@color/bootstrap_brand_warning"
+                android:text="Forgot password?"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

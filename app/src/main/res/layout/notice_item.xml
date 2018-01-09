@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="horizontal" android:layout_width="match_parent"
+android:layout_height="match_parent"
+    android:padding="5dp"
+android:weightSum="10"
+    >
+
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="2">
+    <TextView
+        android:id="@+id/notice_number"
+        android:layout_width="50dip"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#E0F2F1"
+        android:layout_height="match_parent"
+        android:text="1"/>
+</LinearLayout>
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="7"
+    android:weightSum="4"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <TextView
+            android:id="@+id/notice_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Notice Title"
+            android:textColor="#E0F2F1"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:paddingTop="3dp"
+        android:weightSum="2"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/notice_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#E0F2F1"
+                android:gravity="center_horizontal"
+                android:textSize="12sp"
+                android:textStyle="italic|bold"
+                android:layout_marginTop="1dip"
+                android:text="Datetime" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/notice_to"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="12sp"
+                android:textColor="@color/skyBlue1"
+                android:textStyle="bold|italic"
+                android:text="CSE" />
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1">
+    <ImageView android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/arrow_white"/>
+</LinearLayout>
+
+</LinearLayout>

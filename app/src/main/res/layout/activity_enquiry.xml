@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="10dp"
+    android:orientation="vertical"
+    android:background="#00796B">
+    <include
+        layout="@layout/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"/>
+    <com.beardedhen.androidbootstrap.BootstrapWell
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        app:bootstrapSize="xs">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Record an Enquery."
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+    </com.beardedhen.androidbootstrap.BootstrapWell>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:paddingTop="15dp"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="36sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h6"
+                android:textStyle="bold"
+                android:text="Enquery topic / subject"
+                android:gravity="center_horizontal"/>
+
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                app:bootstrapBrand="success"
+                app:roundedCorners="true"
+                android:id="@+id/studentEnqTopicET"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textColor="#000000"
+                android:hint="i.e: enquery topic / subject"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="60dp" />
+
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:labelFor="@+id/passwordETR"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="Enquery description"/>
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                app:bootstrapBrand="success"
+                app:roundedCorners="true"
+                android:id="@+id/studentEnqDescriptionET"
+                android:textColor="#000000"
+                android:textAllCaps="false"
+                android:inputType="textMultiLine"
+                android:hint="i.e: your enquery description"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="120dp" />
+
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                app:bootstrapBrand="danger"
+                app:roundedCorners="true"
+                app:showOutline="false"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textAllCaps="true"
+                android:onClick="onClickSubmitBtn"
+                android:layout_marginTop="15dp"
+                android:layout_height="45dp"
+                android:text="Submit"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

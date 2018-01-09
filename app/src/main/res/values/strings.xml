@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">PCIU N.B.</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="dammyNotice"> This is for the information of all concerned that the course registration of the students of all programs for Spring-2018 trimester will start on November 06, 2017 (Monday) and close on November 13, 2017 (Monday). Students will be allowed to register up to November 20, 2017 with late fee of TK. 500.00. No registration will be done without accounts clearance at any circumstances.\n\n
+
+Students of different programs are advised to complete their course registration within the above mentioned date.\n\n
+
+All Chairmen are requested to distribute the batch wise course registration responsibilities among the faculty members.\n\n
+
+ ----------------\n\n
+
+Md. Obaydur Rahman\n\n
+
+Registrar</string>
+
+    <string-array name="dept_name">
+        <item>Computer Science &amp; Engineering</item>
+        <item>MCSE</item>
+        <item>Electrical &amp; Electronic Engineering</item>
+        <item>Textile Engineering</item>
+        <item>English</item>
+        <item>Business Administration</item>
+        <item>MBA</item>
+        <item>Civil Engineering</item>
+        <item>Journalism &amp; Media Studies</item>
+        <item>Economics</item>
+        <item>Fashion Design &amp; Technology</item>
+        <item>Law-LLB</item>
+    </string-array>
+
+    <string-array name="dept_code">
+        <item>CSE</item>
+        <item>MCSE</item>
+        <item>EEE</item>
+        <item>BTE</item>
+        <item>ENG</item>
+        <item>BBA</item>
+        <item>MBA</item>
+        <item>CEN</item>
+        <item>JRN</item>
+        <item>ECO</item>
+        <item>BFT</item>
+        <item>LLB</item>
+    </string-array>
+</resources>
