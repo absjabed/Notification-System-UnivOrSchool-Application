@@ -170,6 +170,7 @@ public class MainMenuListAdapter extends BaseAdapter {
                                     // Unsubscribe from topic
                                     FirebaseMessaging.getInstance().unsubscribeFromTopic(student.getBatchId());
                                     FirebaseMessaging.getInstance().unsubscribeFromTopic(student.getDeptCode());
+                                    FirebaseMessaging.getInstance().unsubscribeFromTopic(student.getStudentId());
 
                                     // remove student from shared preference
                                     SharedPreferences.Editor editor;
