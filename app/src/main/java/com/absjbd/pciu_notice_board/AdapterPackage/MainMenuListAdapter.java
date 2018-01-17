@@ -21,7 +21,9 @@ import com.absjbd.pciu_notice_board.Activity.PhoneNumbersActivity;
 import com.absjbd.pciu_notice_board.Activity.ProfileActivity;
 import com.absjbd.pciu_notice_board.Activity.ToDoActivity;
 import com.absjbd.pciu_notice_board.Connectivity.Config_Ref;
+import com.absjbd.pciu_notice_board.Model.Student;
 import com.absjbd.pciu_notice_board.R;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.gson.Gson;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -161,6 +163,15 @@ public class MainMenuListAdapter extends BaseAdapter {
                                 public void onClick(SweetAlertDialog sDialog) {
                                     sDialog.dismissWithAnimation();
                                     SharedPreferences prefs = context.getSharedPreferences("LoginInfo", 0);
+                                    Gson gson = new Gson();
+                                    String studentJson = prefs.getString("studentObject", "");
+                                    Student student = gson.fromJson(studentJson, Student.class);
+
+                                    // Unsubscribe from topic
+                                    FirebaseMessaging.getInstance().unsubscribeFromTopic(student.getBatchId());
+                                    FirebaseMessaging.getInstance().unsubscribeFromTopic(student.getDeptCode());
+
+                                    // remove student from shared preference
                                     SharedPreferences.Editor editor;
                                     editor = prefs.edit();
                                     editor.remove("login"); // will delete key email

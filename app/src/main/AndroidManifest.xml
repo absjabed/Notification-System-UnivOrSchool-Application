@@ -37,7 +37,25 @@
         <activity android:name=".Activity.NoticeViewActivity" />
         <activity android:name=".Activity.FirebaseNoticeActivity" />
         <activity android:name=".Activity.EnquiryActivity" />
-        <activity android:name=".Activity.NotificationActivity"></activity>
+        <activity android:name=".Activity.NotificationActivity" />
+
+        <service android:name=".FirebaseIntregation.FirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorPrimary" />
+
+        <activity android:name=".Activity.PushNotificationActivity">
+            <intent-filter>
+                <action android:name="NOTIFICATION" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.absjbd.pciu_notice_board.Activity;
 
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,7 +12,10 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.absjbd.pciu_notice_board.AdapterPackage.MainMenuListAdapter;
+import com.absjbd.pciu_notice_board.Model.Student;
 import com.absjbd.pciu_notice_board.R;
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.gson.Gson;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
@@ -38,6 +42,21 @@ public class MainActivity extends AppCompatActivity
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.content_main);
+
+        SharedPreferences prefs = getApplicationContext().getSharedPreferences("LoginInfo", 0);
+        // then you use
+        Gson gson = new Gson();
+        String studentJson = prefs.getString("studentObject", "");
+
+        if(studentJson == "" && studentJson.length() == 0){
+            Toast.makeText(this, "Please try to login again..", Toast.LENGTH_SHORT).show();
+        }else{
+
+            Student student = gson.fromJson(studentJson, Student.class);
+            FirebaseMessaging.getInstance().subscribeToTopic(student.getBatchId());
+            FirebaseMessaging.getInstance().subscribeToTopic(student.getDeptCode());
+            //setProfileData(student);
+        }
 
         // Find the toolbar view inside the activity layout
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);
