@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity
             Student student = gson.fromJson(studentJson, Student.class);
             FirebaseMessaging.getInstance().subscribeToTopic(student.getBatchId());
             FirebaseMessaging.getInstance().subscribeToTopic(student.getDeptCode());
+            FirebaseMessaging.getInstance().subscribeToTopic(student.getStudentId());
             //setProfileData(student);
         }
 
