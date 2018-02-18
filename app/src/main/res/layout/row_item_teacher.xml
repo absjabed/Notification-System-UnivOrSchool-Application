@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/teacherName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Teacher Name"
+        android:textColor="@color/skyBlue2"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/teacherDesignation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Teacher Designation"
+        android:textColor="@color/skyBlue2"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/teacherDepartment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Teacher Department"
+        android:textColor="@color/skyBlue2"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/teacherNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Phone Number"
+        android:textColor="@color/skyBlue2"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

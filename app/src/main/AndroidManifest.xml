@@ -4,6 +4,11 @@
     package="com.absjbd.pciu_notice_board">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
 
     <application
         android:allowBackup="true"
@@ -31,7 +36,7 @@
         <activity android:name=".Activity.NoticeListActivity" />
         <activity android:name=".Activity.ToDoActivity" />
         <activity android:name=".Activity.PhoneNumbersActivity" />
-        <activity android:name=".Activity.ExamRoutineActivity" />
+        <activity android:name=".Activity.TeachersPhoneActivity" />
         <activity android:name=".Activity.EditProfileActivity" />
         <activity android:name=".Activity.AboutActivity" />
         <activity android:name=".Activity.NoticeViewActivity" />
@@ -56,6 +61,22 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".utils.AlarmRecever" />
+
+        <service
+            android:name=".utils.NotificationService"
+            android:enabled="true" />
+
+        <activity android:name=".Activity.TeacherRelatedActivities.SendNotoficationTActivity" />
+        <activity android:name=".Activity.TeacherRelatedActivities.RegisterActivityTeacher" />
+        <activity android:name=".Activity.TeacherRelatedActivities.SeeEnquiriesActivityTeacher" />
+        <activity android:name=".Activity.TeacherRelatedActivities.ProfileActivityTeacher" />
+        <activity android:name=".Activity.TeacherRelatedActivities.MainActivityTeacher" />
+        <activity android:name=".Activity.TeacherRelatedActivities.EditProfileActivityTeacher" />
+        <activity android:name=".Activity.VersionSelectActivity" />
+        <activity android:name=".Activity.TeacherRelatedActivities.LoginActivityTeacher" />
+        <activity android:name=".Activity.TeacherRelatedActivities.EnqueryViewActivity"></activity>
     </application>
 
 </manifest>

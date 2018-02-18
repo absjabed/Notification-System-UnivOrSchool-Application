@@ -11,18 +11,19 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.absjbd.pciu_notice_board.Activity.AboutActivity;
 import com.absjbd.pciu_notice_board.Activity.EnquiryActivity;
-import com.absjbd.pciu_notice_board.Activity.ExamRoutineActivity;
-import com.absjbd.pciu_notice_board.Activity.LoginActivity;
+import com.absjbd.pciu_notice_board.Activity.TeachersPhoneActivity;
 import com.absjbd.pciu_notice_board.Activity.MainActivity;
 import com.absjbd.pciu_notice_board.Activity.NoticeListActivity;
 import com.absjbd.pciu_notice_board.Activity.PhoneNumbersActivity;
 import com.absjbd.pciu_notice_board.Activity.ProfileActivity;
+import com.absjbd.pciu_notice_board.Activity.TeacherRelatedActivities.SendNotoficationTActivity;
 import com.absjbd.pciu_notice_board.Activity.ToDoActivity;
+import com.absjbd.pciu_notice_board.Activity.VersionSelectActivity;
 import com.absjbd.pciu_notice_board.Connectivity.Config_Ref;
 import com.absjbd.pciu_notice_board.Model.Student;
 import com.absjbd.pciu_notice_board.R;
+import com.absjbd.pciu_notice_board.Sqlite.SqliteHelper;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.gson.Gson;
 
@@ -33,10 +34,11 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
  */
 
 public class MainMenuListAdapter extends BaseAdapter {
+    private static LayoutInflater inflater = null;
+    SqliteHelper mysqlite;
     private String [] result;
     private Context context;
     private Typeface customTypeface;
-    private static LayoutInflater inflater=null;
 
     public MainMenuListAdapter(MainActivity mainActivity, String[] prgmNameList) {
         // TODO Auto-generated constructor stub
@@ -65,10 +67,6 @@ public class MainMenuListAdapter extends BaseAdapter {
         return position;
     }
 
-    public class Holder
-    {
-        TextView tv;
-    }
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         // TODO Auto-generated method stub
@@ -123,16 +121,20 @@ public class MainMenuListAdapter extends BaseAdapter {
                     Intent intent = new Intent(context, ToDoActivity.class);
                     context.startActivity(intent);
 
-                }else if(position == Config_Ref._PHONE_NUMBERS){
+                } else if (position == Config_Ref._PHONE_NUMBERS) { // this will become official phone numbers
+
+                    // TODO: Official static phone numbers list will go here
 
                     Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(context, PhoneNumbersActivity.class);
                     context.startActivity(intent);
 
-                }else if(position == Config_Ref._EXAM_ROUTINE){
+                } else if (position == Config_Ref._EXAM_ROUTINE) { //this will become teachers mobile no
+
+                    // TODO: All registred teaches phone numbers will be available here
 
                     Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(context, ExamRoutineActivity.class);
+                    Intent intent = new Intent(context, TeachersPhoneActivity.class);
                     context.startActivity(intent);
 
                 }else if(position == Config_Ref._FEEDBACK){
@@ -172,14 +174,18 @@ public class MainMenuListAdapter extends BaseAdapter {
                                     FirebaseMessaging.getInstance().unsubscribeFromTopic(student.getDeptCode());
                                     FirebaseMessaging.getInstance().unsubscribeFromTopic(student.getStudentId());
 
+                                    //remove Local todo database
+                                    mysqlite = new SqliteHelper(context.getApplicationContext());
+                                    mysqlite.DeleteLocalToDoData();
+
                                     // remove student from shared preference
                                     SharedPreferences.Editor editor;
                                     editor = prefs.edit();
-                                    editor.remove("login"); // will delete key email
+                                    editor.remove("login_s"); // will delete key email
                                     editor.remove("studentObject");
                                     editor.apply();
 
-                                    Intent i = new Intent(context, LoginActivity.class);
+                                    Intent i = new Intent(context, VersionSelectActivity.class);
                                     // Closing all the Activities
                                     i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     // Add new Flag to start new Activity
@@ -194,14 +200,18 @@ public class MainMenuListAdapter extends BaseAdapter {
                 }else if(position == Config_Ref._ABOUT){
 
                     Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(context, AboutActivity.class);
-                    context.startActivity(intent);
+                    //Intent intent = new Intent(context, SendNotoficationTActivity.class/*AboutActivity.class*/); // Todo: About activity....
+                    //context.startActivity(intent);
 
                 }
 
             }
         });
         return rowView;
+    }
+
+    public class Holder {
+        TextView tv;
     }
 
 }

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_version_select"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00796B"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.absjbd.pciu_notice_board.Activity.VersionSelectActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar_main2"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/include"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/TeacherVersionBtn"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="177dp"
+            android:onClick="onClickTeacher"
+            android:text="Teacher Login"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            app:bootstrapBrand="danger"
+            app:roundedCorners="true"
+            app:showOutline="false" />
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/StudentVersionBtn"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:onClick="OnClickStudent"
+            android:text="Student Login"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            app:bootstrapBrand="success"
+            app:roundedCorners="true"
+            app:showOutline="false" />
+    </LinearLayout>
+
+</RelativeLayout>

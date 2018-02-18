@@ -16,10 +16,18 @@ All Chairmen are requested to distribute the batch wise course registration resp
 Md. Obaydur Rahman\n\n
 
 Registrar</string>
+    <string name="SERVER_KEY">key=AAAAzVxq0tk:APA91bFlZTBAdWdTkHUHpTJWMzdvH2BYB06fLPS4RXBNn-iDDVWG2ohhqEK5QfgLvVXOhuC9R_mU1CpbmAPWpm_EtJPYciN1v2z5N-FliKFI5TUhd_-7Yw6AGwnr0smE1XPOdpPA-sik</string>
+
+    <string-array name="time">
+        <item>None</item>
+        <item>Minutes</item>
+        <item>Hours</item>
+        <item>Days</item>
+    </string-array>
 
     <string-array name="dept_name">
         <item>Computer Science &amp; Engineering</item>
-        <item>MCSE</item>
+        <item>M.Sc in CSE</item>
         <item>Electrical &amp; Electronic Engineering</item>
         <item>Textile Engineering</item>
         <item>English</item>
@@ -46,4 +54,39 @@ Registrar</string>
         <item>BFT</item>
         <item>LLB</item>
     </string-array>
+
+    <string-array name="dept_name2">
+        <item>Computer Science &amp; Engineering</item>
+        <item>M.Sc in CSE</item>
+        <item>Electrical &amp; Electronic Engineering</item>
+        <item>Textile Engineering</item>
+        <item>English</item>
+        <item>Business Administration</item>
+        <item>MBA</item>
+        <item>Civil Engineering</item>
+        <item>Journalism &amp; Media Studies</item>
+        <item>Economics</item>
+        <item>Fashion Design &amp; Technology</item>
+        <item>Law-LLB</item>
+        <item>Everyone in PCIU</item>
+    </string-array>
+
+    <string-array name="dept_code2">
+        <item>cse</item>
+        <item>mcse</item>
+        <item>eee</item>
+        <item>bte</item>
+        <item>eng</item>
+        <item>bba</item>
+        <item>mba</item>
+        <item>cen</item>
+        <item>jrn</item>
+        <item>eco</item>
+        <item>bft</item>
+        <item>llb</item>
+        <item>PCIU</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

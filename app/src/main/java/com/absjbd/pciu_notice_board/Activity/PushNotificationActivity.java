@@ -1,7 +1,9 @@
 package com.absjbd.pciu_notice_board.Activity;
 
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.absjbd.pciu_notice_board.R;
@@ -13,6 +15,8 @@ public class PushNotificationActivity extends AppCompatActivity {
     private String TAG = "PushNotificationActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_push_notification);
 

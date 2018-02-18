@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00796B"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context=".Activity.MainActivity">
@@ -12,13 +13,33 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"/>
 
+    <TextView
+        android:id="@+id/userNameS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="5dp"
+        android:text="Null"
+        android:textColor="#E0F2F1"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/batchNameS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="5dp"
+        android:text="Null"
+        android:textColor="#E0F2F1"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
     <RelativeLayout
-        android:paddingTop="35dp"
-        android:background="#00796B"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center_vertical">
-
+        android:layout_gravity="center_vertical"
+        android:background="#00796B">
         <ListView
             android:id="@+id/ListViewMain"
             android:layout_width="match_parent"

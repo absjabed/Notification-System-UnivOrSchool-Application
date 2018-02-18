@@ -30,8 +30,6 @@ import retrofit2.Response;
 
 public class NoticeListActivity extends AppCompatActivity {
 
-
-
     ListView list;
     NoticeListAdapter adapter;
     ArrayList<NoticeModel> notices;
@@ -55,7 +53,7 @@ public class NoticeListActivity extends AppCompatActivity {
 
         final SweetAlertDialog pDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
         pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-        pDialog.setTitleText("Loading");
+        pDialog.setTitleText("Loading....");
         pDialog.setCancelable(false);
         pDialog.show();
 
@@ -108,7 +106,7 @@ public class NoticeListActivity extends AppCompatActivity {
     }
 
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
@@ -130,5 +128,5 @@ public class NoticeListActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 }

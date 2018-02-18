@@ -136,7 +136,7 @@ public class LoginActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor;
                     editor = pref.edit();
                     editor.putString("studentObject", studentJson); //storing student as string
-                    editor.putBoolean("login",true);
+                    editor.putBoolean("login_s", true);
                     editor.apply();
 
                     //change activity
@@ -168,7 +168,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (doubleBackToExitPressedOnce) {
+        /*if (doubleBackToExitPressedOnce) {
             //super.onBackPressed();
             finish();
             //return;
@@ -183,6 +183,6 @@ public class LoginActivity extends AppCompatActivity {
             public void run() {
                 doubleBackToExitPressedOnce=false;
             }
-        }, 1000);
+        }, 1000);*/
     }
 }

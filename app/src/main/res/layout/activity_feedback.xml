@@ -4,8 +4,8 @@
     android:id="@+id/activity_feedback"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#00796B">
+    android:background="#00796B"
+    android:orientation="vertical">
     <include
         layout="@layout/toolbar_main"
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Update Profile"
+            android:text="Update Student Profile"
             android:textSize="20sp"
             android:textStyle="bold"
             />
@@ -32,129 +32,129 @@
         android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
-                app:bootstrapBrand="success"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
                 android:text="Student Name"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h6" />
 
 
             <com.beardedhen.androidbootstrap.BootstrapEditText
-                app:bootstrapBrand="success"
-                app:roundedCorners="true"
                 android:id="@+id/editStudentNameET"
-                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginLeft="15dp"
-                android:textColor="#000000"
+                android:layout_marginRight="15dp"
                 android:hint="i.e: your name"
+                android:textColor="#000000"
                 android:textStyle="bold"
-                android:layout_width="match_parent"
-                android:layout_height="50dp" />
+                app:bootstrapBrand="success"
+                app:roundedCorners="true" />
 
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
-                app:bootstrapBrand="success"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
                 android:text="Address"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h6" />
 
 
             <com.beardedhen.androidbootstrap.BootstrapEditText
-                app:bootstrapBrand="success"
-                app:roundedCorners="true"
                 android:id="@+id/editStudentAddressET"
-                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginLeft="15dp"
-                android:textColor="#000000"
+                android:layout_marginRight="15dp"
                 android:hint="i.e: your address"
+                android:textColor="#000000"
                 android:textStyle="bold"
-                android:layout_width="match_parent"
-                android:layout_height="50dp" />
+                app:bootstrapBrand="success"
+                app:roundedCorners="true" />
 
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
-                app:bootstrapBrand="success"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
                 android:text="Email address"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h6" />
 
 
             <com.beardedhen.androidbootstrap.BootstrapEditText
-                app:bootstrapBrand="success"
-                app:roundedCorners="true"
                 android:id="@+id/editStudentEmailET"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
-                android:textColor="#000000"
-                android:hint="i.e: email@mail.com"
-                android:textStyle="bold"
-                android:inputType="textEmailAddress"
                 android:layout_width="match_parent"
-                android:layout_height="50dp" />
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:hint="i.e: email@mail.com"
+                android:inputType="textEmailAddress"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:roundedCorners="true" />
 
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
-                app:bootstrapBrand="success"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
                 android:text="Phone number"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h6" />
 
 
             <com.beardedhen.androidbootstrap.BootstrapEditText
-                app:bootstrapBrand="success"
-                app:roundedCorners="true"
                 android:id="@+id/editStudentPhoneET"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
-                android:textColor="#000000"
-                android:hint="i.e: 0167*****64"
-                android:textStyle="bold"
-                android:inputType="textEmailAddress"
                 android:layout_width="match_parent"
-                android:layout_height="50dp" />
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:hint="i.e: 0167*****64"
+                android:inputType="textEmailAddress"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:roundedCorners="true" />
 
             <com.beardedhen.androidbootstrap.BootstrapButton
+                android:id="@+id/updateProfileBtn"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:onClick="onClickUpdateProfileBtn"
+                android:text="Update"
+                android:textAllCaps="true"
+                android:textStyle="bold"
                 app:bootstrapBrand="danger"
                 app:roundedCorners="true"
-                app:showOutline="false"
-                android:id="@+id/updateProfileBtn"
-                android:textStyle="bold"
-                android:layout_width="match_parent"
-                android:textAllCaps="true"
-                android:onClick="onClickUpdateProfileBtn"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
-                android:layout_height="45dp"
-                android:text="Update"/>
+                app:showOutline="false" />
             </LinearLayout>
     </ScrollView>
 

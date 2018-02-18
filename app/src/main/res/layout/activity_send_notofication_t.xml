@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00796B"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="10dp"
+    tools:context="com.absjbd.pciu_notice_board.Activity.TeacherRelatedActivities.SendNotoficationTActivity">
+
+    <include
+        layout="@layout/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+
+    <com.beardedhen.androidbootstrap.BootstrapWell
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        app:bootstrapSize="xs">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Push Notification"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </com.beardedhen.androidbootstrap.BootstrapWell>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="15dp">
+
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center_horizontal"
+                android:text="Department"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h6" />
+
+            <com.beardedhen.androidbootstrap.BootstrapDropDown
+                android:id="@+id/noticeDepartmentT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textStyle="bold"
+                app:bootstrapBrand="secondary"
+                app:bootstrapExpandDirection="down"
+                app:bootstrapSize="md"
+                app:bootstrapText="Select your department"
+                app:dropdownResource="@array/dept_name2"
+                app:roundedCorners="true" />
+
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:text="Batch Code (optional)"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h6" />
+
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                android:id="@+id/noticeBatchT"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:hint="example: 004 or 005"
+                android:inputType="number"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:roundedCorners="true" />
+
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:text="Notice Title"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h6" />
+
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                android:id="@+id/noticeTitleT"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:hint="Notice tile ....."
+                android:inputType="text"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:roundedCorners="true" />
+
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="Full Notice"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h6" />
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                android:id="@+id/noticeFullT"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:hint="i.e: Full notice information ......"
+                android:inputType="textMultiLine"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:roundedCorners="true" />
+
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                android:id="@+id/sendNotificationBtn"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:onClick="onClickSendNotification"
+                android:text="Send Notification"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                app:bootstrapBrand="danger"
+                app:roundedCorners="true"
+                app:showOutline="false" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

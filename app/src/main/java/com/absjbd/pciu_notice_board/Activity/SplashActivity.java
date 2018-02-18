@@ -10,6 +10,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.absjbd.pciu_notice_board.Activity.TeacherRelatedActivities.MainActivityTeacher;
 import com.absjbd.pciu_notice_board.R;
 import com.google.firebase.messaging.FirebaseMessaging;
 
@@ -43,20 +44,28 @@ public class SplashActivity extends AppCompatActivity {
                 try {
                     SharedPreferences prefs = getApplicationContext().getSharedPreferences("LoginInfo", 0);
 // then you use
-                    boolean isLogin = prefs.getBoolean("login", false);
+                    boolean isLogin_s = prefs.getBoolean("login_s", false);
+                    boolean isLogin_t = prefs.getBoolean("login_t", false);
 
-                    if(isLogin){
+                    if (isLogin_s) {
 
                         // Go to the Main Activity
+                        //TODO: check teacher or student
                         Intent i = new Intent(SplashActivity.this, MainActivity.class);
                         startActivity(i);
 
-                    }else{
+                    }
 
-                        Intent i = new Intent(SplashActivity.this, LoginActivity.class);
+                    if (isLogin_t) {
+                        Intent i = new Intent(SplashActivity.this, MainActivityTeacher.class);
+                        startActivity(i);
+                    }
+
+                    if (!isLogin_s && !isLogin_t) {
+
+                        Intent i = new Intent(SplashActivity.this, VersionSelectActivity.class);
                         startActivity(i);
                         // Go to the Registration Activity
-
                     }
 
                 }catch (Exception ex){

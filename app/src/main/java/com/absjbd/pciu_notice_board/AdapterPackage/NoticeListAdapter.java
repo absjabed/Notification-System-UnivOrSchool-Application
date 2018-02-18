@@ -2,6 +2,7 @@ package com.absjbd.pciu_notice_board.AdapterPackage;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,9 +24,10 @@ import java.util.HashMap;
 
 public class NoticeListAdapter extends BaseAdapter {
 
+    private static LayoutInflater inflater = null;
     Context context;
     private ArrayList<NoticeModel> data;
-    private static LayoutInflater inflater=null;
+    private Typeface customTypefacePlain, customTypefacePlainItalic;
 
     public NoticeListAdapter(NoticeListActivity Activity, ArrayList<NoticeModel> notices) {
         // TODO Auto-generated constructor stub
@@ -34,7 +36,10 @@ public class NoticeListAdapter extends BaseAdapter {
         inflater = ( LayoutInflater )context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        //customTypeface = Typeface.createFromAsset(context.getAssets(),"fonts/Aquino-Demo.ttf");
+        customTypefacePlain = Typeface.createFromAsset(context.getAssets(), "fonts/Cambria.ttf");
+        // customTypefacePlainBold = Typeface.createFromAsset(context.getAssets(),"fonts/cambriab.ttf");
+        //customTypefaceItalicBold = Typeface.createFromAsset(context.getAssets(),"fonts/CAMBRIAZ.TTF");
+        customTypefacePlainItalic = Typeface.createFromAsset(context.getAssets(), "fonts/CAMBRIAI.TTF");
     }
     @Override
     public int getCount() {
@@ -54,11 +59,6 @@ public class NoticeListAdapter extends BaseAdapter {
         return position;
     }
 
-
-    public class Holder
-    {
-        TextView tvNumber, tvTitle, tvDate, tvNoticeTo;
-    }
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         // TODO Auto-generated method stub
@@ -82,6 +82,10 @@ public class NoticeListAdapter extends BaseAdapter {
         holder.tvDate.setText(notice.getNoticeDate());
         holder.tvNoticeTo.setText(notice.getNoticeTo());
 
+        holder.tvNumber.setTypeface(customTypefacePlain);
+        holder.tvTitle.setTypeface(customTypefacePlain);
+        holder.tvDate.setTypeface(customTypefacePlainItalic);
+        holder.tvNoticeTo.setTypeface(customTypefacePlainItalic);
         //holder.tv.setTypeface(customTypeface);
         // holder.img=(ImageView) rowView.findViewById(R.id.imageView1);
        // holder.tv.setText(result[position]);
@@ -89,7 +93,7 @@ public class NoticeListAdapter extends BaseAdapter {
         rowView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "item: "+position, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, "item: "+position, Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(context, NoticeViewActivity.class);
                 intent.putExtra("notice_obj", notice);
@@ -99,6 +103,10 @@ public class NoticeListAdapter extends BaseAdapter {
             }
         });
         return rowView;
+    }
+
+    public class Holder {
+        TextView tvNumber, tvTitle, tvDate, tvNoticeTo;
     }
 
 }

@@ -14,13 +14,27 @@ public class Config_Ref {
     public static final int _LOGOUT = 6;
     public static final int _ABOUT = 7;
 
+    public static final int _PROFILE_t = 0;
+    public static final int _NOTICE_LIST_t = 1;
+    public static final int _TODO_LIST_t = 2;
+    public static final int _SEND_NOTICE_t = 3;
+    public static final int _SEE_ENQUIRIES_t = 4;
+    public static final int _LOGOUT_t = 5;
+    public static final int _ABOUT_t = 6;
+
 
     public static final String BASE_URL = "https://pciunotice.000webhostapp.com";
     public static final String REGISTER_OPERATION = "register";
+    public static final String REGISTER_OPERATION_TEACHER = "registerTeacher";
+    public static final String NOTICE_INSERT = "noticeInsert";
     public static final String LOGIN_OPERATION = "login";
+    public static final String LOGIN_OPERATION_TEACHER = "loginTeacher";
     public static final String CHANGE_PASSWORD_OPERATION = "chgPass";
     public static final String SUBMIT_ENQUERY_OPERATION = "query";
     public static final String EDIT_PROFILE_OPERATION = "editProfile";
+    public static final String EDIT_PROFILE_OPERATION_TEACHER = "editProfileTeacher";
+    public static final String RESET_PASSWORD_INITIATE = "resPassReq";
+    public static final String RESET_PASSWORD_FINISH = "resPass";
 
     public static final String SUCCESS = "success";
     public static final String FAILURE = "failure";

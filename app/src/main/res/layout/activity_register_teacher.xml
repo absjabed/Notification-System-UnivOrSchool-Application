@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00796B"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.absjbd.pciu_notice_board.Activity.RegisterActivity">
+
+    <include
+        layout="@layout/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+
+    <com.beardedhen.androidbootstrap.BootstrapWell
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        app:bootstrapSize="xs">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Teacher Registration"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </com.beardedhen.androidbootstrap.BootstrapWell>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:text="Name*"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:bootstrapHeading="h6" />
+
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                android:id="@+id/teacherNameET"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:hint="i.e: your name"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:roundedCorners="true" />
+
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:text="Address"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:bootstrapHeading="h6" />
+
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                android:id="@+id/teacherAddressET"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:hint="i.e: your address"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:roundedCorners="true" />
+
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:text="Email address*"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:bootstrapHeading="h6" />
+
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                android:id="@+id/teacherEmailET"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:hint="i.e: email@mail.com"
+                android:inputType="textEmailAddress"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:roundedCorners="true" />
+
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:text="Phone number*"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:bootstrapHeading="h6" />
+
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                android:id="@+id/teacherPhoneET"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:hint="i.e: 0167*****64"
+                android:inputType="textEmailAddress"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:roundedCorners="true" />
+
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:text="Department*"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:bootstrapHeading="h6" />
+
+            <com.beardedhen.androidbootstrap.BootstrapDropDown
+                android:id="@+id/teacherDepartmentDDL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textStyle="bold"
+                app:bootstrapBrand="secondary"
+                app:bootstrapExpandDirection="down"
+                app:bootstrapSize="md"
+                app:bootstrapText="Select your department"
+                app:dropdownResource="@array/dept_name"
+                app:roundedCorners="true" />
+
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:text="Designation*"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:bootstrapHeading="h6" />
+
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                android:id="@+id/teacherDesignationET"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:hint="i.e: Lecturer/Professor"
+                android:inputType="text"
+                android:textAllCaps="true"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:roundedCorners="true" />
+
+
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:text="Teacher ID*"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:bootstrapHeading="h6" />
+
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                android:id="@+id/teacherIdET"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:hint="i.e: CSE.TeacherID"
+                android:inputType="text"
+                android:textAllCaps="true"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:roundedCorners="true" />
+
+
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="Enter new Password*"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:bootstrapHeading="h6" />
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                android:id="@+id/newPasswordTeacherET"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:inputType="textPassword"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:roundedCorners="true" />
+
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="re - Enter Password*"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:bootstrapHeading="h6" />
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                android:id="@+id/rePasswordTeacherET"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:inputType="textPassword"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:roundedCorners="true" />
+
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                android:id="@+id/teacherRegisterBtn"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:onClick="onClickTeacherRegisterBtn"
+                android:text="Register"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:roundedCorners="true"
+                app:showOutline="false" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

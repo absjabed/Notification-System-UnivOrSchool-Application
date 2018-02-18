@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_profile"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00796B"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="15dp"
     android:paddingRight="15dp"
     android:paddingTop="10dp"
-    android:orientation="vertical"
-    android:background="#00796B"
     tools:context="com.absjbd.pciu_notice_board.Activity.ProfileActivity">
     <include
         layout="@layout/toolbar_main"
@@ -27,52 +27,52 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:text="Profile"
+            android:text="Student Profile"
             android:textSize="20sp"
             android:textStyle="bold"
             />
         <android.support.design.widget.FloatingActionButton
+            android:id="@+id/floatingActionButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true"
             android:layout_gravity="right"
-            app:fabSize="mini"
+            android:clickable="true"
             android:onClick="OnClickEditProfileBtn"
-            app:srcCompat="@android:drawable/ic_menu_edit"
-            android:id="@+id/floatingActionButton" />
+            app:fabSize="mini"
+            app:srcCompat="@android:drawable/ic_menu_edit" />
     </com.beardedhen.androidbootstrap.BootstrapWell>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
-            android:paddingTop="10dp"
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_height="match_parent">
+            android:paddingTop="10dp">
 
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
                 android:layout_marginTop="5dp"
-                app:bootstrapBrand="primary"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:gravity="center_horizontal"
                 android:text="Student Name"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:bootstrapHeading="h6" />
 
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:id="@+id/profile_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
-                android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
-                app:bootstrapBrand="success"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
                 android:text="name"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h6" />
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
@@ -81,26 +81,26 @@
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
                 android:layout_marginTop="5dp"
-                app:bootstrapBrand="primary"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:gravity="center_horizontal"
                 android:text="Student Address"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:bootstrapHeading="h6" />
 
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:id="@+id/profile_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
-                android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
-                app:bootstrapBrand="success"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
                 android:text="Address"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h6" />
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
@@ -109,26 +109,26 @@
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
                 android:layout_marginTop="5dp"
-                app:bootstrapBrand="primary"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:gravity="center_horizontal"
                 android:text="Phone No"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:bootstrapHeading="h6" />
 
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:id="@+id/profile_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
-                android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
-                app:bootstrapBrand="success"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
                 android:text="Phone"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h6" />
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
@@ -137,26 +137,26 @@
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
                 android:layout_marginTop="5dp"
-                app:bootstrapBrand="primary"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:gravity="center_horizontal"
                 android:text="Email address"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:bootstrapHeading="h6" />
 
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:id="@+id/profile_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
-                android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
-                app:bootstrapBrand="success"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
                 android:text="Email"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h6" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -166,26 +166,26 @@
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
                 android:layout_marginTop="5dp"
-                app:bootstrapBrand="primary"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:gravity="center_horizontal"
                 android:text="Department"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:bootstrapHeading="h6" />
 
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:id="@+id/profile_department"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
-                android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
-                app:bootstrapBrand="success"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
                 android:text="department"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h6" />
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
@@ -194,26 +194,26 @@
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
                 android:layout_marginTop="5dp"
-                app:bootstrapBrand="primary"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:gravity="center_horizontal"
                 android:text="Batch ID"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:bootstrapHeading="h6" />
 
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:id="@+id/profile_batchId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
-                android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
-                app:bootstrapBrand="success"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
                 android:text="batch id"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h6" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -223,26 +223,26 @@
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
                 android:layout_marginTop="5dp"
-                app:bootstrapBrand="primary"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:gravity="center_horizontal"
                 android:text="Student ID"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:bootstrapHeading="h6" />
 
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:id="@+id/profile_studentId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
-                android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
-                app:bootstrapBrand="success"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
                 android:text="student id"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h6" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -252,26 +252,26 @@
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
                 android:layout_marginTop="5dp"
-                app:bootstrapBrand="primary"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:gravity="center_horizontal"
                 android:text="Unique ID"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:bootstrapHeading="h6" />
 
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:id="@+id/profile_uniqueId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
-                android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
-                app:bootstrapBrand="success"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
                 android:text="unique id"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h6" />
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
@@ -280,26 +280,26 @@
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
                 android:layout_marginTop="5dp"
-                app:bootstrapBrand="primary"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:gravity="center_horizontal"
                 android:text="Registration Date.time"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:bootstrapHeading="h6" />
 
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:id="@+id/profile_dateTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
-                android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
-                app:bootstrapBrand="success"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
                 android:text="date.time"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h6" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -309,26 +309,26 @@
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
                 android:layout_marginTop="5dp"
-                app:bootstrapBrand="primary"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:gravity="center_horizontal"
                 android:text="Account Status"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="primary"
+                app:bootstrapHeading="h6" />
 
             <com.beardedhen.androidbootstrap.BootstrapLabel
                 android:id="@+id/profile_status"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
-                android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
-                app:bootstrapBrand="success"
-                app:bootstrapHeading="h6"
-                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
                 android:text="Active"
-                android:gravity="center_horizontal"/>
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h6" />
 
 
 

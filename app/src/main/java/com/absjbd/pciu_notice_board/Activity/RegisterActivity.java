@@ -45,20 +45,17 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RegisterActivity extends AppCompatActivity {
 
+    private static final String TAG = "RegisterActivityREG";
     BootstrapEditText studentNameET, studentAddressET, studentEmailET,
             studentPhoneET, batch_idET, student_idET, newPasswordET, rePasswordET;
-
     BootstrapDropDown department_namesDD;
     BootstrapButton submitBtn;
     String[] department_code, dept_names;
-
     String studentName, studentAddress, studentEmail, studentPhone,
             batch_id, student_id, newPassword, rePassword, department="";
     SweetAlertDialog pDialog;
     ApiInterface apiInterface;
     Retrofit retrofit;
-
-    private static final String TAG = "RegisterActivityREG";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -182,7 +179,7 @@ public class RegisterActivity extends AppCompatActivity {
                 studentAddress,
                 studentPhone,
                 studentEmail,
-                department,
+                department.toLowerCase(),
                 batch_id,
                 student_id,
                 rePassword

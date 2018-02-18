@@ -123,16 +123,6 @@ public class EditProfileActivity extends AppCompatActivity {
                     editEmail.getText().toString());
 
             pDialog.dismiss();
-                /*To the register
-                * to withdraw the marksheet of ssc and hsc examination
-                *
-                * cse 23rd my student ID....:478. recently i have completed my graduation and i've got my provisional certificate also
-                *
-                * now i am in need of my ssc and hsc examination marksheet.
-                *
-                * So, you would be kind enough to give ssc and hsc examination marksheet and oblige thereby.
-                 *
-                 * Name, ID, Dept: Batch:  signature:*/
 
         }else{
             new SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE)

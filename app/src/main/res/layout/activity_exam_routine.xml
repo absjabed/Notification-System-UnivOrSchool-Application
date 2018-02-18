@@ -4,11 +4,19 @@
     android:id="@+id/activity_exam_routine"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#00796B"
-    tools:context="com.absjbd.pciu_notice_board.Activity.ExamRoutineActivity">
+    android:orientation="vertical"
+    tools:context="com.absjbd.pciu_notice_board.Activity.TeachersPhoneActivity">
     <include
         layout="@layout/toolbar_main"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"/>
+
+    <ListView
+        android:id="@+id/teacher_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:divider="#B2EBF2"
+        android:dividerHeight="1dp"
+        android:paddingTop="7dp" />
 </LinearLayout>
