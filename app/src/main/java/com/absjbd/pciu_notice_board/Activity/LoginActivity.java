@@ -66,6 +66,7 @@ public class LoginActivity extends AppCompatActivity {
         pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
         pDialog.setTitleText("Loading");
         pDialog.setCancelable(true);
+
     }
 
     public void ForgotPasswordClick(View view) {
