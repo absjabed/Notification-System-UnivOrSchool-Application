@@ -107,7 +107,7 @@ public class TeachersDataAdapter extends BaseAdapter {
         holder.tvTeacherPhone.setTypeface(customTypefacePlain);
         //holder.tv.setTypeface(customTypeface);
         // holder.img=(ImageView) rowView.findViewById(R.id.imageView1);
-        // holder.tv.setText(result[position]);
+        // holder.tv.setT76ext(result[position]);
         // holder.img.setImageResource(imageId[position]);
         rowView.setOnClickListener(new View.OnClickListener() {
             @Override

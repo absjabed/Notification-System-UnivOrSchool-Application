@@ -28,6 +28,8 @@ import retrofit2.Response;
 public class SeeEnquiriesActivityTeacher extends AppCompatActivity {
 
     ListView list;
+    Intent intent;
+    String dept;
     EnqueryListAdapter adapter;
     ArrayList<EnqueryModel> enqueryModels;
     ApiInterface apiInterface;
@@ -45,7 +47,8 @@ public class SeeEnquiriesActivityTeacher extends AppCompatActivity {
         // Sets the Toolbar to act as the ActionBar for this Activity window.
         // Make sure the toolbar exists in the activity and is not null
         setSupportActionBar(toolbar);
-
+        intent = getIntent();
+        dept = intent.getStringExtra("teacherDept");
         list = (ListView) findViewById(R.id.enquery_list);
 
         final SweetAlertDialog pDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
@@ -63,8 +66,18 @@ public class SeeEnquiriesActivityTeacher extends AppCompatActivity {
             public void onResponse(Call call, Response response) {
                 enqueryModels = (ArrayList<EnqueryModel>) response.body();
 
-                adapter = new EnqueryListAdapter(SeeEnquiriesActivityTeacher.this, enqueryModels);
+                // To filter enqueries as teacheres departments.........
+                ArrayList<EnqueryModel> filtered = new ArrayList<>();
+                for (EnqueryModel m : enqueryModels) {
+                    if (m.getDeptCode().toLowerCase().trim().equals(dept.toLowerCase().trim())) { // checks if dept matches.
+                        filtered.add(m);
+                    }
+                }
+
+                adapter = new EnqueryListAdapter(SeeEnquiriesActivityTeacher.this, filtered);
                 list.setAdapter(adapter);
+                list.setEmptyView(findViewById(R.id.emptyElement));
+
 
                 pDialog.dismiss();
             }

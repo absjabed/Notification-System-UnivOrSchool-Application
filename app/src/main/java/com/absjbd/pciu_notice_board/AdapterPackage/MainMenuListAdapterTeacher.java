@@ -17,6 +17,7 @@ import com.absjbd.pciu_notice_board.Activity.TeacherRelatedActivities.MainActivi
 import com.absjbd.pciu_notice_board.Activity.TeacherRelatedActivities.ProfileActivityTeacher;
 import com.absjbd.pciu_notice_board.Activity.TeacherRelatedActivities.SeeEnquiriesActivityTeacher;
 import com.absjbd.pciu_notice_board.Activity.TeacherRelatedActivities.SendNotoficationTActivity;
+import com.absjbd.pciu_notice_board.Activity.TeachersPhoneActivity;
 import com.absjbd.pciu_notice_board.Activity.ToDoActivity;
 import com.absjbd.pciu_notice_board.Activity.VersionSelectActivity;
 import com.absjbd.pciu_notice_board.Connectivity.Config_Ref;
@@ -115,6 +116,14 @@ public class MainMenuListAdapterTeacher extends BaseAdapter {
 
                     Toast.makeText(context, "You Clicked " + result[position], Toast.LENGTH_LONG).show();
 
+                } else if (position == Config_Ref._PHONE_NUMBERS_t) { //this will become teachers mobile no
+
+                    // TODO: All registred teaches phone numbers will be available here
+
+                    Toast.makeText(context, "You Clicked " + result[position], Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(context, TeachersPhoneActivity.class);
+                    context.startActivity(intent);
+
                 } else if (position == Config_Ref._TODO_LIST_t) {
 
                     Toast.makeText(context, "You Clicked " + result[position], Toast.LENGTH_LONG).show();
@@ -130,12 +139,25 @@ public class MainMenuListAdapterTeacher extends BaseAdapter {
                     context.startActivity(intent);
 
                 } else if (position == Config_Ref._SEE_ENQUIRIES_t) {
+                    SharedPreferences prefs = context.getApplicationContext().getSharedPreferences("LoginInfo", 0);
 
-                    // TODO: See all enquiries......
+                    String studentJson = prefs.getString("teacherObject", "");
+                    if (studentJson == "" && studentJson.length() == 0) {
+                        new SweetAlertDialog(context, SweetAlertDialog.WARNING_TYPE)
+                                .setTitleText("Oops...")
+                                .setContentText("Try to login, properly....")
+                                .show();
+                    } else {
 
-                    Toast.makeText(context, "You Clicked " + result[position], Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(context, SeeEnquiriesActivityTeacher.class);
-                    context.startActivity(intent);
+                        Gson gson = new Gson();
+                        Student student = gson.fromJson(studentJson, Student.class);
+                        // TODO: See all enquiries......
+
+                        Toast.makeText(context, "You Clicked " + result[position], Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(context, SeeEnquiriesActivityTeacher.class);
+                        intent.putExtra("teacherDept", student.getDeptCode().toLowerCase());
+                        context.startActivity(intent);
+                    }
 
                 } else if (position == Config_Ref._LOGOUT_t) {
 

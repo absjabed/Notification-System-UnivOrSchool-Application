@@ -41,19 +41,47 @@ Registrar</string>
     </string-array>
 
     <string-array name="dept_code">
-        <item>CSE</item>
-        <item>MCSE</item>
-        <item>EEE</item>
-        <item>BTE</item>
-        <item>ENG</item>
-        <item>BBA</item>
-        <item>MBA</item>
-        <item>CEN</item>
-        <item>JRN</item>
-        <item>ECO</item>
-        <item>BFT</item>
-        <item>LLB</item>
+        <item>cse</item>
+        <item>mcse</item>
+        <item>eee</item>
+        <item>bte</item>
+        <item>eng</item>
+        <item>bba</item>
+        <item>mba</item>
+        <item>cen</item>
+        <item>jrn</item>
+        <item>eco</item>
+        <item>bft</item>
+        <item>llb</item>
     </string-array>
+
+
+    <string-array name="dept_name3">
+        <item>Computer Science &amp; Engineering</item>
+        <item>Electrical &amp; Electronic Engineering</item>
+        <item>Textile Engineering</item>
+        <item>English</item>
+        <item>Business Administration</item>
+        <item>Civil Engineering</item>
+        <item>Journalism &amp; Media Studies</item>
+        <item>Economics</item>
+        <item>Fashion Design &amp; Technology</item>
+        <item>Law-LLB</item>
+    </string-array>
+
+    <string-array name="dept_code3">
+        <item>cse</item>
+        <item>eee</item>
+        <item>bte</item>
+        <item>eng</item>
+        <item>bba</item>
+        <item>cen</item>
+        <item>jrn</item>
+        <item>eco</item>
+        <item>bft</item>
+        <item>llb</item>
+    </string-array>
+
 
     <string-array name="dept_name2">
         <item>Computer Science &amp; Engineering</item>

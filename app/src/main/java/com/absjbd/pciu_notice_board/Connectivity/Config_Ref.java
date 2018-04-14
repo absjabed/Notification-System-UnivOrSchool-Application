@@ -9,18 +9,19 @@ public class Config_Ref {
     public static final int _NOTICE_LIST = 1;
     public static final int _TODO_LIST = 2;
     public static final int _PHONE_NUMBERS = 3;
-    public static final int _EXAM_ROUTINE = 4;
-    public static final int _FEEDBACK = 5;
-    public static final int _LOGOUT = 6;
-    public static final int _ABOUT = 7;
+    //public static final int _EXAM_ROUTINE = 4;
+    public static final int _FEEDBACK = 4;
+    public static final int _LOGOUT = 5;
+    public static final int _ABOUT = 6;
 
     public static final int _PROFILE_t = 0;
     public static final int _NOTICE_LIST_t = 1;
     public static final int _TODO_LIST_t = 2;
-    public static final int _SEND_NOTICE_t = 3;
-    public static final int _SEE_ENQUIRIES_t = 4;
-    public static final int _LOGOUT_t = 5;
-    public static final int _ABOUT_t = 6;
+    public static final int _PHONE_NUMBERS_t = 3;
+    public static final int _SEND_NOTICE_t = 4;
+    public static final int _SEE_ENQUIRIES_t = 5;
+    public static final int _LOGOUT_t = 6;
+    public static final int _ABOUT_t = 7;
 
 
     public static final String BASE_URL = "https://pciunotice.000webhostapp.com";
@@ -35,6 +36,8 @@ public class Config_Ref {
     public static final String EDIT_PROFILE_OPERATION_TEACHER = "editProfileTeacher";
     public static final String RESET_PASSWORD_INITIATE = "resPassReq";
     public static final String RESET_PASSWORD_FINISH = "resPass";
+    public static final String RESET_PASSWORD_INITIATE_t = "resPassReq_t";
+    public static final String RESET_PASSWORD_FINISH_t = "resPass_t";
 
     public static final String SUCCESS = "success";
     public static final String FAILURE = "failure";

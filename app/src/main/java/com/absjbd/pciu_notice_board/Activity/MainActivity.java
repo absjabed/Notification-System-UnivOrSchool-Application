@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity
             "Notices",
             "To-Do List",
             "Official Phone No",
-            "Teachers Phone No",
             "Enquiry",
             "Logout",
             "About"

@@ -8,6 +8,7 @@ import android.app.Fragment;
 import android.os.CountDownTimer;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.AppCompatButton;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,14 +19,23 @@ import android.widget.TextView;
 import com.absjbd.pciu_notice_board.Connectivity.Config_Ref;
 import com.absjbd.pciu_notice_board.Interface.ApiInterface;
 import com.absjbd.pciu_notice_board.Model.ServerRequest;
+import com.absjbd.pciu_notice_board.Model.ServerResponse;
 import com.absjbd.pciu_notice_board.R;
+import com.absjbd.pciu_notice_board.Retrofit.RetrofitApiClient;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class ResetPasswordFragment extends Fragment implements View.OnClickListener {
 
+    SweetAlertDialog pDialog;
+    ApiInterface apiInterface;
+    Retrofit retrofit;
     private AppCompatButton btn_reset;
     private EditText et_email, et_code, et_password;
     private TextView tv_timer;
@@ -94,13 +104,47 @@ public class ResetPasswordFragment extends Fragment implements View.OnClickListe
 
     private void initiateResetPasswordProcess(String email) {
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Config_Ref.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+        retrofit = RetrofitApiClient.getClient();
 
-        ApiInterface requestInterface = retrofit.create(ApiInterface.class);
+        apiInterface = retrofit.create(ApiInterface.class);
 
+        Call<ServerResponse> call = apiInterface.forgotPassword(
+                Config_Ref.RESET_PASSWORD_INITIATE, //TODO: login operation for teacher
+                email
+        );
+
+        call.enqueue(new Callback<ServerResponse>() {
+            @Override
+            public void onResponse(Call<ServerResponse> call, Response<ServerResponse> response) {
+                ServerResponse resp = response.body();
+                Snackbar.make(getView(), resp.getMessage(), Snackbar.LENGTH_LONG).show();
+
+                if (resp.getResult().equals(Config_Ref.SUCCESS)) {
+
+                    Snackbar.make(getView(), resp.getMessage(), Snackbar.LENGTH_LONG).show();
+                    et_email.setVisibility(View.GONE);
+                    et_code.setVisibility(View.VISIBLE);
+                    et_password.setVisibility(View.VISIBLE);
+                    tv_timer.setVisibility(View.VISIBLE);
+                    btn_reset.setText("Change Password");
+                    isResetInitiated = true;
+                    startCountdownTimer();
+
+                } else {
+
+                    Snackbar.make(getView(), resp.getMessage(), Snackbar.LENGTH_LONG).show();
+
+                }
+                progress.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onFailure(Call<ServerResponse> call, Throwable t) {
+                progress.setVisibility(View.INVISIBLE);
+                Log.e(Config_Ref.TAG, "failedNotice");
+                Snackbar.make(getView(), t.getLocalizedMessage(), Snackbar.LENGTH_LONG).show();
+            }
+        });
         /*User user = new User();
         user.setEmail(email);
         ServerRequest request = new ServerRequest();

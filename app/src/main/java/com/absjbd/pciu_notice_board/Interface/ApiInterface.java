@@ -45,6 +45,16 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST("/pciu/api/credentials/index.php")
+    Call<ServerResponse> changePassword(
+            //change password request
+            @Field("operation") String operation,
+            @Field("studentEmail") String studentEmail,
+            @Field("code") String code,
+            @Field("password") String password
+    );
+
+    @FormUrlEncoded
+    @POST("/pciu/api/credentials/index.php")
     Call<ServerResponse> submitEnquiry(
 
             @Field("operation") String operation,

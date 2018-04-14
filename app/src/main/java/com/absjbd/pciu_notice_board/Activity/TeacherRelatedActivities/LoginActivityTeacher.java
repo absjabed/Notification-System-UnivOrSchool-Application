@@ -68,8 +68,8 @@ public class LoginActivityTeacher extends AppCompatActivity {
     }
 
     public void TeacherForgotPasswordClick(View view) {
-        Toast.makeText(this, "Forgot password Working", Toast.LENGTH_SHORT).show();
-        pDialog.show();
+        Intent intent = new Intent(LoginActivityTeacher.this, Forgot_Password_Teacher.class);
+        startActivity(intent);
     }
 
     public void TeacherRegisterBtnClick(View view) {
@@ -99,7 +99,6 @@ public class LoginActivityTeacher extends AppCompatActivity {
             } else {
                 pDialog.setTitleText("Checking Credentials.....");
                 pDialog.setCancelable(false);
-                pDialog.show();
                 loginPrecess(studentID, password);
                 /*Intent i = new Intent(LoginActivityTeacher.this, MainActivityTeacher.class);
                 startActivity(i);*/
@@ -109,9 +108,8 @@ public class LoginActivityTeacher extends AppCompatActivity {
 
     }
 
-
     private void loginPrecess(String studentId, String password) {
-
+        pDialog.show();
         retrofit = RetrofitApiClient.getClient();
 
         apiInterface = retrofit.create(ApiInterface.class);
@@ -128,7 +126,9 @@ public class LoginActivityTeacher extends AppCompatActivity {
 
                 ServerResponse resp = response.body();
                 Student student = resp.getStudent(); // todo: got teacher object
-
+                boolean b = response.isSuccessful();
+                //response.
+                Log.e("res", b ? "ok" : "not");
                 if (student != null) {
                     //Converting teacher object to Gson to be stored in SharedPref.
                     Gson gson = new Gson();
@@ -154,12 +154,16 @@ public class LoginActivityTeacher extends AppCompatActivity {
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                     finish();
+                } else {
+                    pDialog.dismiss();
+                    Toast.makeText(LoginActivityTeacher.this, resp.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
             }
 
             @Override
             public void onFailure(Call<ServerResponse> call, Throwable t) {
+                Log.e("res", "error");
                 pDialog.dismiss();
                 Toast.makeText(LoginActivityTeacher.this, "failed, " + t.getMessage(), Toast.LENGTH_SHORT).show();
                 Log.e("stack69", Arrays.toString(t.getStackTrace()) + "Message: " + t.getMessage() + ", Local message: " + t.getLocalizedMessage() + ", Cause:" + t.getCause());

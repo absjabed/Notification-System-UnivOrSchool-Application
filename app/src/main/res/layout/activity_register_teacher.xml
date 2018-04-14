@@ -170,7 +170,7 @@
                 app:bootstrapExpandDirection="down"
                 app:bootstrapSize="md"
                 app:bootstrapText="Select your department"
-                app:dropdownResource="@array/dept_name"
+                app:dropdownResource="@array/dept_name3"
                 app:roundedCorners="true" />
 
             <com.beardedhen.androidbootstrap.BootstrapLabel

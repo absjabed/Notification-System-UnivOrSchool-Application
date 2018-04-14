@@ -1,5 +1,7 @@
 package com.absjbd.pciu_notice_board.Activity;
 
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
@@ -14,6 +16,7 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.absjbd.pciu_notice_board.Connectivity.Config_Ref;
+import com.absjbd.pciu_notice_board.Fragments.ResetPasswordFragment;
 import com.absjbd.pciu_notice_board.Interface.ApiInterface;
 import com.absjbd.pciu_notice_board.Model.ServerResponse;
 import com.absjbd.pciu_notice_board.Model.Student;
@@ -66,8 +69,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void ForgotPasswordClick(View view) {
-        Toast.makeText(this, "Forgot password Working", Toast.LENGTH_SHORT).show();
-        pDialog.show();
+        //Toast.makeText(this, "Forgot password Working", Toast.LENGTH_SHORT).show();
+        //pDialog.show();
+        Intent intent = new Intent(LoginActivity.this, Forgot_Password.class);
+        startActivity(intent);
+        //finish();
     }
 
     public void RegisterBtnClick(View view) {
@@ -98,7 +104,6 @@ public class LoginActivity extends AppCompatActivity {
             }else{
                 pDialog.setTitleText("Checking Credentials.....");
                 pDialog.setCancelable(false);
-                pDialog.show();
                 loginPrecess(studentID, password);
             }
 
@@ -108,7 +113,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void loginPrecess(String studentId, String password) {
-
+        pDialog.show();
         retrofit = RetrofitApiClient.getClient();
 
         apiInterface = retrofit.create(ApiInterface.class);
@@ -151,6 +156,9 @@ public class LoginActivity extends AppCompatActivity {
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                     finish();
+                } else {
+                    pDialog.dismiss();
+                    Toast.makeText(LoginActivity.this, resp.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
             }

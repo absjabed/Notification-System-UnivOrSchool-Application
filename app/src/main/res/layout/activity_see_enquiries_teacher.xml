@@ -21,4 +21,15 @@
         android:divider="#B2EBF2"
         android:dividerHeight="1dp"
         android:paddingTop="7dp" />
+
+    <TextView
+        android:id="@+id/emptyElement"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:text="No Enquiries recorded yet. "
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
 </LinearLayout>

@@ -129,15 +129,7 @@ public class MainMenuListAdapter extends BaseAdapter {
                     Intent intent = new Intent(context, PhoneNumbersActivity.class);
                     context.startActivity(intent);
 
-                } else if (position == Config_Ref._EXAM_ROUTINE) { //this will become teachers mobile no
-
-                    // TODO: All registred teaches phone numbers will be available here
-
-                    Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(context, TeachersPhoneActivity.class);
-                    context.startActivity(intent);
-
-                }else if(position == Config_Ref._FEEDBACK){
+                } else if (position == Config_Ref._FEEDBACK) {
                     SharedPreferences prefs = context.getApplicationContext().getSharedPreferences("LoginInfo", 0);
 
                     String studentJson = prefs.getString("studentObject", "");

@@ -29,6 +29,7 @@ public class MainActivityTeacher extends AppCompatActivity {
             "Profile",
             "Notices",
             "To-Do List",
+            "Teachers Phone No",
             "Post Notice",
             "See Enquiries",
             "Logout",

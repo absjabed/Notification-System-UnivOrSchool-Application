@@ -125,7 +125,7 @@ public class EnquiryActivity extends AppCompatActivity {
                 studentEnqueryTopic,
                 studentEnqueryDescription,
                 studentPhone+" \n "+studentEmail,
-                deptCode,
+                deptCode.toLowerCase(),
                 studentId
         );
 

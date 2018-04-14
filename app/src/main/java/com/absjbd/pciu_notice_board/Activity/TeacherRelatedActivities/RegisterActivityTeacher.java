@@ -66,8 +66,8 @@ public class RegisterActivityTeacher extends AppCompatActivity {
         rePasswordET = (BootstrapEditText) findViewById(R.id.rePasswordTeacherET);
         department_namesDD = (BootstrapDropDown) findViewById(R.id.teacherDepartmentDDL);
         submitBtn = (BootstrapButton) findViewById(R.id.teacherRegisterBtn);
-        department_code = getResources().getStringArray(R.array.dept_code);
-        dept_names = getResources().getStringArray(R.array.dept_name);
+        department_code = getResources().getStringArray(R.array.dept_code3);
+        dept_names = getResources().getStringArray(R.array.dept_name3);
 
 
         //progress dialog
@@ -191,15 +191,10 @@ public class RegisterActivityTeacher extends AppCompatActivity {
             @Override
             public void onFailure(Call<ServerResponse> call, Throwable t) {
                 pDialog.dismiss();
-               /* new SweetAlertDialog(RegisterActivityTeacher.this, SweetAlertDialog.ERROR_TYPE)
+
+                new SweetAlertDialog(RegisterActivityTeacher.this, SweetAlertDialog.ERROR_TYPE)
                         .setTitleText("Failed!")
                         .setContentText("Unable to register this teacher.")
-                        .show();*/
-                // TODO: Temp test...
-
-                new SweetAlertDialog(RegisterActivityTeacher.this, SweetAlertDialog.SUCCESS_TYPE)
-                        .setTitleText("Success! ")
-                        .setContentText("Teacher Registered* successfully!")
                         .show();
 
                 studentNameET.setText(null);
