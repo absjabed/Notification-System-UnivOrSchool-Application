@@ -14,7 +14,6 @@ import static okhttp3.logging.HttpLoggingInterceptor.*;
  */
 
 public class RetrofitApiClient {
-    private static final String BASE_URL = "https://pciunotice.000webhostapp.com"; //address of your remote server. Here I used localhost
     private static Retrofit retrofit = null;
 
     public static Retrofit getClient() {
