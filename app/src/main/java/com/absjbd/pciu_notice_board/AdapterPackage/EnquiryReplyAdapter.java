@@ -66,7 +66,7 @@ public class EnquiryReplyAdapter extends BaseAdapter {
         final EnqueryReplyModel enqueryModel;
         enqueryModel = data.get(position);
 
-        holder.tvEnqReplyTopic.setText(enqueryModel.getTopicTxt());
+        holder.tvEnqReplyTopic.setText(enqueryModel.getQueryTxt());
         holder.tvEnqReplyText.setText(enqueryModel.getReplyTxt());
         holder.tvEnqReplyDateTime.setText(enqueryModel.getDatetimeStmp());
 

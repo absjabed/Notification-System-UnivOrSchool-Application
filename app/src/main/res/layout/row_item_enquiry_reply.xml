@@ -30,8 +30,7 @@
         android:gravity="center"
         android:text="Date Time"
         android:textColor="@color/skyBlue1"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+        android:textSize="15sp" />
 
 
 </LinearLayout>
