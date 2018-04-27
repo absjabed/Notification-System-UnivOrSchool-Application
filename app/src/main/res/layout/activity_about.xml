@@ -4,11 +4,21 @@
     android:id="@+id/activity_about"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#00796B"
+    android:orientation="vertical"
     tools:context="com.absjbd.pciu_notice_board.Activity.AboutActivity">
     <include
         layout="@layout/toolbar_main"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"
+        android:text="@string/abot_txt"
+        android:textColor="#fff"
+        android:textSize="17sp"
+        android:textStyle="bold" />
 </LinearLayout>

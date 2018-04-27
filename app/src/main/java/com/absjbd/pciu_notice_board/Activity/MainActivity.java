@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity
             "To-Do List",
             "Official Phone No",
             "Enquiry",
+            "Enquiry Replies",
             "Logout",
             "About"
     } ;

@@ -11,7 +11,9 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.absjbd.pciu_notice_board.Activity.AboutActivity;
 import com.absjbd.pciu_notice_board.Activity.EnquiryActivity;
+import com.absjbd.pciu_notice_board.Activity.EnquiryReplyActivity;
 import com.absjbd.pciu_notice_board.Activity.TeachersPhoneActivity;
 import com.absjbd.pciu_notice_board.Activity.MainActivity;
 import com.absjbd.pciu_notice_board.Activity.NoticeListActivity;
@@ -97,7 +99,7 @@ public class MainMenuListAdapter extends BaseAdapter {
                         context.startActivity(intent);
                     }
 
-                    Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
+                    //Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
 
                 }else if(position == Config_Ref._NOTICE_LIST){
                     SharedPreferences prefs = context.getApplicationContext().getSharedPreferences("LoginInfo", 0);
@@ -113,7 +115,7 @@ public class MainMenuListAdapter extends BaseAdapter {
                         context.startActivity(intent);
                     }
 
-                    Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
+                    //Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
 
                 }else if(position == Config_Ref._TODO_LIST){
 
@@ -125,7 +127,7 @@ public class MainMenuListAdapter extends BaseAdapter {
 
                     // TODO: Official static phone numbers list will go here
 
-                    Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
+                    //Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(context, PhoneNumbersActivity.class);
                     context.startActivity(intent);
 
@@ -143,7 +145,30 @@ public class MainMenuListAdapter extends BaseAdapter {
                         context.startActivity(intent);
                     }
 
-                    Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
+                    //Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
+
+                } else if (position == Config_Ref._REPLIES) {
+                    SharedPreferences prefs = context.getApplicationContext().getSharedPreferences("LoginInfo", 0);
+
+                    String studentJson = prefs.getString("studentObject", "");
+                    if (studentJson == "" && studentJson.length() == 0) {
+                        new SweetAlertDialog(context, SweetAlertDialog.WARNING_TYPE)
+                                .setTitleText("Oops...")
+                                .setContentText("Try to login, properly....")
+                                .show();
+                    } else {
+
+                        Gson gson = new Gson();
+                        Student student = gson.fromJson(studentJson, Student.class);
+                        // TODO: See all enquiries......
+
+                        //Toast.makeText(context, "You Clicked " + result[position], Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(context, EnquiryReplyActivity.class);
+                        intent.putExtra("studentID", student.getStudentId().toLowerCase());
+                        context.startActivity(intent);
+                    }
+
+                    //Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
 
                 }else if(position == Config_Ref._LOGOUT){
 
@@ -187,13 +212,13 @@ public class MainMenuListAdapter extends BaseAdapter {
                             })
                             .show();
 
-                    Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
+                    //Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
 
                 }else if(position == Config_Ref._ABOUT){
 
-                    Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
-                    //Intent intent = new Intent(context, SendNotoficationTActivity.class/*AboutActivity.class*/); // Todo: About activity....
-                    //context.startActivity(intent);
+                    // Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(context, AboutActivity.class); // Todo: About activity....
+                    context.startActivity(intent);
 
                 }
 

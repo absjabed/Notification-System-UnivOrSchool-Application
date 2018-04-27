@@ -1,6 +1,7 @@
 package com.absjbd.pciu_notice_board.Interface;
 
 import com.absjbd.pciu_notice_board.Model.EnqueryModel;
+import com.absjbd.pciu_notice_board.Model.EnqueryReplyModel;
 import com.absjbd.pciu_notice_board.Model.NoticeModel;
 import com.absjbd.pciu_notice_board.Model.ServerRequest;
 import com.absjbd.pciu_notice_board.Model.ServerResponse;
@@ -35,6 +36,9 @@ public interface ApiInterface {
 
     @GET("/pciu/api/getEnqueryData.php")
     Call<ArrayList<EnqueryModel>> getEnqueries();
+
+    @GET("/pciu/api/getReplyData.php")
+    Call<ArrayList<EnqueryReplyModel>> getReplies();
 
     @FormUrlEncoded
     @POST("/pciu/api/credentials/index.php")
@@ -134,24 +138,6 @@ public interface ApiInterface {
     Call<ServerResponse> operation(@Body ServerRequest request);
 
 }
-
-/*//This method is used for "POST"
-    @FormUrlEncoded
-    @POST("/api.php")
-    Call<ServerResponse> post(
-            @Field("method") String method,
-            @Field("username") String username,
-            @Field("password") String password
-    );
-
-  //This method is used for "GET"
-    @GET("/api.php")
-    Call<ServerResponse> get(
-            @Query("method") String method,
-            @Query("username") String username,
-            @Query("password") String password
-    );*/
-
 
 
 

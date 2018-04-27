@@ -9,10 +9,10 @@ public class Config_Ref {
     public static final int _NOTICE_LIST = 1;
     public static final int _TODO_LIST = 2;
     public static final int _PHONE_NUMBERS = 3;
-    //public static final int _EXAM_ROUTINE = 4;
-    public static final int _FEEDBACK = 4;
-    public static final int _LOGOUT = 5;
-    public static final int _ABOUT = 6;
+    public static final int _FEEDBACK = 4; //this is Enquiry
+    public static final int _REPLIES = 5; //this is enquiry reply
+    public static final int _LOGOUT = 6;
+    public static final int _ABOUT = 7;
 
     public static final int _PROFILE_t = 0;
     public static final int _NOTICE_LIST_t = 1;
@@ -24,7 +24,7 @@ public class Config_Ref {
     public static final int _ABOUT_t = 7;
 
 
-    public static final String BASE_URL = "https://you_should_not_check_this_bro.com"; //:p
+    public static final String BASE_URL = "https://pciunotice.000webhostapp.com"; //:p
     public static final String REGISTER_OPERATION = "register";
     public static final String REGISTER_OPERATION_TEACHER = "registerTeacher";
     public static final String NOTICE_INSERT = "noticeInsert";

@@ -117,4 +117,6 @@ Registrar</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="abot_txt">ABOUT\n\nThis project is developed for final year project submission. And currently available for testing purpose.\n\n# Student Module:\nStudent Registration, Login, Reset Password, Student profile, Edit profile, Notices, Push notification, TO-DO, Enquiry, Enquiry Replies, Official phone no, Logout\n\n#Teacher Module\nTeacher Registration, Login, Reset Password, Teacher profile, Edit profile, Notices, Sending Push notification, Post Notice, TO-DO, Enquiry, Teachers phone no, Logout\n\n#Web Module To handle all features of mobile application, Like Reply student Enquiries, registration approval etc.</string>
+    <string name="phn_no">Official Phone Numbers: \n\nTel: \n 88 031-2869877, \n88 031-2869899 \nMobile: \n\n\t01773225500, \n\t01773225511, \n 01851120791 \nFax: \t+880312869966</string>
 </resources>

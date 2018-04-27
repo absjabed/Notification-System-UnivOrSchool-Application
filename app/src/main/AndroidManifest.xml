@@ -77,7 +77,8 @@
         <activity android:name=".Activity.TeacherRelatedActivities.LoginActivityTeacher" />
         <activity android:name=".Activity.TeacherRelatedActivities.EnqueryViewActivity" />
         <activity android:name=".Activity.Forgot_Password" />
-        <activity android:name=".Activity.TeacherRelatedActivities.Forgot_Password_Teacher"></activity>
+        <activity android:name=".Activity.TeacherRelatedActivities.Forgot_Password_Teacher" />
+        <activity android:name=".Activity.EnquiryReplyActivity"></activity>
     </application>
 
 </manifest>
