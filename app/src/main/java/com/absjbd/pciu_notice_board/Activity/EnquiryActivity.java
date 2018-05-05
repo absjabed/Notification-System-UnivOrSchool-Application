@@ -31,13 +31,13 @@ public class EnquiryActivity extends AppCompatActivity {
 
     BootstrapEditText enqueryDescriptionET, enqueryTopicET;
     Student student;
+    Gson gson;
+    String studentJson;
 
     SweetAlertDialog pDialog;
     ApiInterface apiInterface;
     Retrofit retrofit;
     SharedPreferences prefs;
-    Gson gson;
-    String studentJson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

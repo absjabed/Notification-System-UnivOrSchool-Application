@@ -1,6 +1,7 @@
 package com.absjbd.pciu_notice_board.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -18,8 +19,10 @@ import android.widget.Toast;
 import com.absjbd.pciu_notice_board.AdapterPackage.NoticeListAdapter;
 import com.absjbd.pciu_notice_board.Interface.ApiInterface;
 import com.absjbd.pciu_notice_board.Model.NoticeModel;
+import com.absjbd.pciu_notice_board.Model.Student;
 import com.absjbd.pciu_notice_board.R;
 import com.absjbd.pciu_notice_board.Retrofit.RetrofitApiClient;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
@@ -33,6 +36,12 @@ public class NoticeListActivity extends AppCompatActivity {
     ListView list;
     NoticeListAdapter adapter;
     ArrayList<NoticeModel> notices;
+    SharedPreferences prefs;
+    boolean isLogin_s;
+    boolean isLogin_t;
+    Student student;
+    Gson gson;
+    String studentJson;
     ApiInterface apiInterface;
 
     @Override
@@ -48,6 +57,35 @@ public class NoticeListActivity extends AppCompatActivity {
         // Sets the Toolbar to act as the ActionBar for this Activity window.
         // Make sure the toolbar exists in the activity and is not null
         setSupportActionBar(toolbar);
+
+        try {
+            prefs = getApplicationContext().getSharedPreferences("LoginInfo", 0);
+// then you use
+            isLogin_s = prefs.getBoolean("login_s", false);
+            isLogin_t = prefs.getBoolean("login_t", false);
+
+            if (isLogin_s) {
+                gson = new Gson();
+                studentJson = prefs.getString("studentObject", "");
+                Student student = gson.fromJson(studentJson, Student.class);
+                this.student = student;
+            }
+
+            if (isLogin_t) {
+                gson = new Gson();
+                studentJson = prefs.getString("teacherObject", "");
+                Student student = gson.fromJson(studentJson, Student.class);
+                this.student = student;
+            }
+
+            if (!isLogin_s && !isLogin_t) {
+
+                Toast.makeText(NoticeListActivity.this, "Try to login properly, then try again.", Toast.LENGTH_SHORT).show();
+            }
+
+        } catch (Exception ex) {
+            Toast.makeText(NoticeListActivity.this, "There is a problem with Mobile Settings. " + ex.getMessage(), Toast.LENGTH_SHORT).show();
+        }
 
         list = (ListView) findViewById(R.id.notice_list);
 
@@ -66,7 +104,18 @@ public class NoticeListActivity extends AppCompatActivity {
             public void onResponse(Call call, Response response) {
                 notices = (ArrayList<NoticeModel>) response.body();
 
-                adapter = new NoticeListAdapter(NoticeListActivity.this, notices);
+                // To filter enquery replies on studentID.........
+                ArrayList<NoticeModel> filtered = new ArrayList<>();
+                for (NoticeModel m : notices) {
+                    if (m.getNoticeTo().trim().equals("PCIU") ||
+                            m.getNoticeTo().toLowerCase().trim().equals(student.getDeptCode().toLowerCase().trim()) ||
+                            m.getNoticeTo().toLowerCase().trim().equals(student.getBatchId().toLowerCase().trim()) ||
+                            m.getNoticeTo().toLowerCase().trim().equals(student.getStudentId().toLowerCase().trim())) { //  checks if id matches.
+                        filtered.add(m);
+                    }
+                }
+
+                adapter = new NoticeListAdapter(NoticeListActivity.this, filtered);
                 list.setAdapter(adapter);
 
                 pDialog.dismiss();
