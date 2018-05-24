@@ -16,7 +16,7 @@ All Chairmen are requested to distribute the batch wise course registration resp
 Md. Obaydur Rahman\n\n
 
 Registrar</string>
-    <string name="SERVER_KEY">key=AAAAzVxq0tk:APA91bFlZTBAdWdTkHUHpTJWMzdvH2BYB06fLPS4RXBNn-iDDVWG2ohhqEK5QfgLvVXOhuC9R_mU1CpbmAPWpm_EtJPYciN1v2z5N-FliKFI5TUhd_-7Yw6AGwnr0smE1XPOdpPA-sik</string>
+    <string name="SERVER_KEY">HERE WILL BE YOUR FCM SERVER KEY</string>
 
     <string-array name="time">
         <item>None</item>

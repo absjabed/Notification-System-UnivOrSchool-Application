@@ -95,7 +95,7 @@ public class NoticeListActivity extends AppCompatActivity {
         pDialog.setCancelable(false);
         pDialog.show();
 
-         apiInterface = RetrofitApiClient.getClient().create(ApiInterface.class);
+        apiInterface = RetrofitApiClient.getClient().create(ApiInterface.class);
 
         Call call = apiInterface.getNotices();
 

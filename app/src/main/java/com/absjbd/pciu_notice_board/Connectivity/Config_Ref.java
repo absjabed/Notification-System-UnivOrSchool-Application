@@ -24,7 +24,7 @@ public class Config_Ref {
     public static final int _ABOUT_t = 7;
 
 
-    public static final String BASE_URL = "https://pciunotice.000webhostapp.com"; //:p
+    public static final String BASE_URL = "www.example.com"; // ;)
     public static final String REGISTER_OPERATION = "register";
     public static final String REGISTER_OPERATION_TEACHER = "registerTeacher";
     public static final String NOTICE_INSERT = "noticeInsert";
